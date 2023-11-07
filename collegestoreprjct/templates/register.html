@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<form action="login" method="post">
+    {% csrf_token %}
+    <input type="text"  name="User name" placeholder="Enter your name"><br><br>
+    <input type="password" name="Password" placeholder="Enter password"><br><br>
+    <input type="password" name="Confirm Password" placeholder="Enter  your password again"><br><br>
+
+    <a href="{% url 'btn_click' %}" class="btn btn-outline-primary" type="submit">submit
+
+</form>
+{% endblock %}

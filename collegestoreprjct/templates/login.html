@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <h3><b><center>Login Page</center></b></h3>
+    <input type="text" name=" User Name" placeholder="Enter your name"><br><br>
+
+    <input type="password" name="Password" placeholder="Enter your Password"><br><br>
+    {% if user.is_authenticated %}
+    <a href="{% url 'login' %}" class="btn btn-outline-primary" type="submit" >Submit</a>
+{% endif %}
+     <a href="{% url 'rereg' %}">Click here for register</a>
+
+</form>
+{% endblock %}
